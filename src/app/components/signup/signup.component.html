@@ -1,0 +1,58 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Signup</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="signUpForm">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['Firstname'].dirty && signUpForm.hasError('required','Firstname')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="Firstname" type="text" placeholder="Firstname">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['Firstname'].dirty && signUpForm.hasError('required','Firstname')" class="text-danger">*Firstname is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['Lastname'].dirty && signUpForm.hasError('required','Lastname')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="Lastname" type="text" placeholder="Lastname">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['Lastname'].dirty && signUpForm.hasError('required','Lastname')"class="text-danger">*lastname is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="Email" type="text" placeholder="Email">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')" class="text-danger">*Email is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['username'].dirty && signUpForm.hasError('required','username')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="username" type="text" placeholder="username">
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['username'].dirty && signUpForm.hasError('required','username')" class="text-danger">*username is required</small>
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')">
+                                    <span class="fa fa-lock p-2"></span>
+                                    <input formControlName="password" [type]="type" placeholder="password">
+                                    <span (click)="hideShowBtn()" class="fa {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                            <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger">*password is required</small>
+                            <button type="submit" class="btn btn-primary btn-block mt-4 w-100" (click)="onsignup()">signup</button>
+                            <div class="text-center mt-4 text-muted">Already have an account? <a id="forget"
+                                    routerLink="/login">Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

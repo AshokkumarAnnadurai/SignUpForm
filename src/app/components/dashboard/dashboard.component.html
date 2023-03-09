@@ -1,0 +1,64 @@
+<!-- <div>
+<div class="container mt-5" >
+    <div class="card-header">
+        Users
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <table style="border: 1px solid black;padding: 20px;text-align: center;">
+                    <thead style="border: 1px solid black;padding: 20px;text-align: center;">
+                        <tr style="border: 1px solid black;padding: 20px;text-align: center;">
+                            <th style="border: 1px solid black;">Firstname</th>
+                            <th style="border: 1px solid black;">Lastname</th>
+                            <th style="border: 1px solid black;">Email</th>
+                            <th style="border: 1px solid black;">username</th>
+                            <th style="border: 1px solid black;">password</th>
+                            <th style="border: 1px solid black;">Update</th>
+                        </tr>
+                        <tr *ngFor="let user of userarray" style="border: 1px solid black;padding: 20px;">
+                            <td style="border: 1px solid black;padding: 20px;">{{user.firstname}}</td>
+                            <td style="border: 1px solid black;padding: 20px;">{{user.lastname}}</td>
+                            <td style="border: 1px solid black;padding: 20px;">{{user.email}}</td>
+                            <td style="border: 1px solid black;padding: 20px;">{{user.username}}</td>
+                            <td style="border: 1px solid black;padding: 20px;">{{user.password}}</td>
+                            <td style="border: 1px solid black;padding: 20px;"><button (click)="deleteUser(user.id)" class="btn btn-link">Delete</button></td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> -->
+<head>
+
+</head>
+<body style="background-color: lightskyblue;">
+
+    <div class="card-header" style="font: bold;color: white;">
+        Users
+    </div>
+    <div class="card-body">
+        <table style="background-color: white">
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>password</th>
+                <th>deleteUser</th>
+            </tr>
+            <tr *ngFor="let user of userarray">
+                <td>{{user.id}}</td>
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td><button (click)="deleteUser(user.id)" class="btn btn-danger" style="color: white;">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
